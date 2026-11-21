@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Multi-games
+    </title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <h1>The Perfect Arcade</h1>
+  <hr>
+  <br>
+  
+  <div class="game-1-container">
+    <h1>Heads or Tails</h1>
+    <h4>Rules: Try to guess the same as the computer</h4>
+    <div class="coins-container">
+    <button class="heads" onclick="playerMove('heads')"><img class="coin" src="./games-pic/heads.png"></button>
+    <button class="tails" onclick="playerMove('tails')"><img class="coin" src="./games-pic/tails.png"></button>
+    </div>
+    <div class="results-container">
+    <p class="result"></p>
+    <p class="score"></p>
+    </div>
+  </div>
+
+
+  <script>
+  let score = {
+    wins : 0,
+    loses :0
+  };
+
+  function pickcomputermove(){
+    const number = Math.random();
+
+    let computerMove ='';
+   
+   if (number>0.5){
+     computerMove = "heads"
+   } else {
+     computerMove = "tails"
+   }
+   return computerMove;
+  }
+
+  function playerMove(playerChoice){
+    computerMove= pickcomputermove();
+    let results = '';
+
+    if (computerMove === playerChoice) {
+      results = 'You Win!';
+      score.wins++; 
+    } else {
+      results = 'You lose :(';
+      score.loses++
+    }
+
+
+   document.querySelector('.result').innerHTML=`You chose <img class="small-coin" src="./games-pic/${playerChoice}.png">, computer chose <img class="small-coin" src="./games-pic/${computerMove}.png">, ${results}`;
+   document.querySelector('.score').innerHTML=`Score: wins: ${score.wins}, loses: ${score.loses} `;
+  }
+  </script>
+
+
+
+  </body>
+
+</html>
