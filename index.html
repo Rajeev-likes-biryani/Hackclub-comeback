@@ -27,41 +27,21 @@
   </div>
 
 
-  <script>
-  let score = {
-    wins : 0,
-    loses :0
-  };
+    <div class="game-2-container">
+    <h1>Rock paper scissors</h1>
+    <h4>Rock beats scissors, scissors beat paper, and paper beats rock. You just gotta win against a bot</h4>
+    <div class="buttons-container">
+      <button class="rock" onclick="playerChoice('rock')">Rock</button>
+      <button class="paper" onclick="playerChoice('paper')">Paper</button>
+      <button class="scissors" onclick="playerChoice('scissors')">Scissors</button>
+    </div>
+    <div class="results-container">
+    <p class="game-2-result"></p>
+    <p class="score"></p>
+    </div>
+  </div>
 
-  function pickcomputermove(){
-    const number = Math.random();
-
-    let computerMove ='';
-   
-   if (number>0.5){
-     computerMove = "heads"
-   } else {
-     computerMove = "tails"
-   }
-   return computerMove;
-  }
-
-  function playerMove(playerChoice){
-    computerMove= pickcomputermove();
-    let results = '';
-
-    if (computerMove === playerChoice) {
-      results = 'You Win!';
-      score.wins++; 
-    } else {
-      results = 'You lose :(';
-      score.loses++
-    }
-
-
-   document.querySelector('.result').innerHTML=`You chose <img class="small-coin" src="./games-pic/${playerChoice}.png">, computer chose <img class="small-coin" src="./games-pic/${computerMove}.png">, ${results}`;
-   document.querySelector('.score').innerHTML=`Score: wins: ${score.wins}, loses: ${score.loses} `;
-  }
+  <script src="index.js">
   </script>
 
 
