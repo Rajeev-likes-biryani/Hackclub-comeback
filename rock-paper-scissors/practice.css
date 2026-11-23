@@ -1,0 +1,88 @@
+body{
+  overflow-x: hidden;
+  background-image: url('./games-pic/Wallpaper.jpg');
+  margin-bottom: 3000px;
+}
+
+.game-1-container{
+  background-color: black;
+  height: 100vh;
+  width: 180vh;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.emoji-container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.emoji{
+  width: 100px;
+  border-radius: 50%;
+  border-width: 2px;
+  border-color: white;
+}
+
+.emoji-button{
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border-width: 2px;
+  border-color: white;
+  cursor: pointer;
+}
+
+.result{
+  font-size: 30px;
+  font-weight: bold;
+  font-family: arial;
+  color: white;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.move{
+  font-size: 15px;
+  font-weight: bold;
+  font-family: arial;
+  color: white;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.score{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: arial;
+  color: white;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.reset-button{
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: arial;
+  border-width: 2px;
+  border-color: white;
+  cursor: pointer;
+  margin-left: 50px;
+  margin-top: 20px;
+  position: absolute;
+  right: 100px;
+}
+
+
+
