@@ -7,7 +7,7 @@
  height: 100dvh;
  pointer-events: none;
  background-image: url("games-pic/noise-smooth.png");
- opacity: 0.8;
+ opacity: 0.4;
 
  mix-blend-mode: multiply;
  animation: noise-animation 0.25s steps(2) infinite;
@@ -91,6 +91,35 @@ h4{
   height: 75px;
 }
 
+.ascii-wrap{
+  position: relative;
+  display: inline-block;
+  top: 0px;
+  right: 10px;
+}
+
+.coin-dim,.coin-bright{
+  position: absolute;
+  font-size: 10px;
+  white-space: pre;
+  color: #9c8f88;
+  cursor: default;
+  top: -300px;
+  margin-left: 300px;
+  rotate: 90deg;
+}
+
+.coin-dim{
+  color: rgba(156,143,136,0.45);
+}
+
+.coin-bright{
+  color: rgba(156, 143, 136, 1);
+  -webkit-mask-image: radial-gradient(circle 60px at var(--mx, -999px) var(--my,-999px),black 0%, transparent 100%);
+  mask-image: radial-gradient(circle 60px at var(--mx, -999px) var(--my,-999px),black 0%, transparent 100%);
+
+}
+
 .game-2-container{
   margin: 0 auto;
   width: 800px;
@@ -144,6 +173,33 @@ h4{
   align-items: center;
 }
 
+.ascii-wrap-2{
+  position: relative;
+  display: inline-block;
+  left:-600px;
+  top: -300px;
+}
+
+.rock-dim,.rock-bright{
+  position: absolute;
+  font-size: 20px;
+  white-space: pre;
+  color: #9c8f88;
+  cursor: default;
+  margin-left: 0px;
+}
+
+.rock-dim{
+  color: rgba(156,143,136,0.45);
+}
+
+.rock-bright{
+  color: rgba(156, 143, 136, 1);
+  -webkit-mask-image: radial-gradient(circle 60px at var(--mx, -999px) var(--my,-999px),black 0%, transparent 100%);
+  mask-image: radial-gradient(circle 60px at var(--mx, -999px) var(--my,-999px),black 0%, transparent 100%);
+
+}
+
 .game-3-container{
   margin: 0 auto;
   width: 800px;
@@ -190,4 +246,32 @@ h4{
 .winning-game-cell{
   background-color: black;
   color:#d95d39;
+}
+
+.ascii-wrap-3{
+  position: relative;
+  display: inline-block;
+  top: -500px;
+  right: -200px;
+  rotate: 10deg;
+}
+
+.tic-tac-toe-dim,.tic-tac-toe-bright{
+  position: absolute;
+  font-size: 15px;
+  white-space: pre;
+  color: #9c8f88;
+  cursor: default;
+  margin-left: 0px;
+}
+
+.tic-tac-toe-dim{
+  color: rgba(156,143,136,0.45);
+}
+
+.tic-tac-toe-bright{
+  color: rgba(156, 143, 136, 1);
+  -webkit-mask-image: radial-gradient(circle 60px at var(--mx, -999px) var(--my,-999px),black 0%, transparent 100%);
+  mask-image: radial-gradient(circle 60px at var(--mx, -999px) var(--my,-999px),black 0%, transparent 100%);
+
 }

@@ -172,3 +172,29 @@ function restartGame (){
     cell.classList.remove("winning-game-cell");
   }
 }
+
+
+function enableHoverGlow(wrapper,brightlayer){
+  wrapper.addEventListener('mousemove',(e) => {
+    const rect =brightlayer.getBoundingClientRect();
+    const mx =e.clientX - rect.left;
+    const my =e.clientY - rect.top;
+    brightlayer.style.setProperty('--mx', mx+'px');
+    brightlayer.style.setProperty('--my', my+'px');
+  }
+)}
+
+enableHoverGlow(
+  document.getElementById('asciiwrap'),
+  document.querySelector('.coin-bright')
+);
+
+enableHoverGlow(
+  document.getElementById('asciiwrap2'),
+  document.querySelector('.rock-bright')
+);
+
+enableHoverGlow(
+  document.getElementById('asciiwrap3'),
+  document.querySelector('.tic-tac-toe-bright')
+);
