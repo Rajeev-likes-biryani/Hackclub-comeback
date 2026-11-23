@@ -30,16 +30,36 @@
     <div class="game-2-container">
     <h1>Rock paper scissors</h1>
     <h4>Rock beats scissors, scissors beat paper, and paper beats rock. You just gotta win against a bot</h4>
-    <div class="buttons-container">
-      <button class="rock" onclick="playerChoice('rock')">Rock</button>
-      <button class="paper" onclick="playerChoice('paper')">Paper</button>
-      <button class="scissors" onclick="playerChoice('scissors')">Scissors</button>
+    <div class="game-2-buttons-container">
+      <button class="game-2-button" onclick="playerChoice('rock')"><img class="game-2-button-logo" src="./games-pic/Rock.png"> </button>
+      <button class="game-2-button" onclick="playerChoice('paper')"><img class="game-2-button-logo" src="./games-pic/paper.png"></button>
+      <button class="game-2-button" onclick="playerChoice('scissors')"><img class="game-2-button-logo" src="./games-pic/scissors.png"></button>
     </div>
-    <div class="results-container">
+    <div class="game-results-container">
     <p class="game-2-result"></p>
-    <p class="score"></p>
+    <p class="game-2-score"></p>
     </div>
   </div>
+
+
+  <div class="game-3-container">
+    <h1>Tic Tac Toe</h1>
+    <h4>Rules: 3 in a row win but u have to have a friend to play this unless you wanna play with ur own mind.</h4>
+    <div id="game-board">
+      <div data-cell-index="0" class="game-cell"></div>
+      <div data-cell-index="1" class="game-cell"></div>
+      <div data-cell-index="2" class="game-cell"></div>
+      <div data-cell-index="3" class="game-cell"></div>
+      <div data-cell-index="4" class="game-cell"></div>
+      <div data-cell-index="5" class="game-cell"></div>
+      <div data-cell-index="6" class="game-cell"></div>
+      <div data-cell-index="7" class="game-cell"></div>
+      <div data-cell-index="8" class="game-cell"></div>
+    </div>
+    <button id="restart-game-3">restart game</button>
+    </div>
+
+
 
   <script src="index.js">
   </script>

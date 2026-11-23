@@ -34,6 +34,12 @@
   }
 
 
+let scoring = {
+ wins : 0,
+ ties: 0,
+ losses:0
+}
+
 function computerChoice(){
    const number= Math.random();
    let computerMove = '';
@@ -77,5 +83,92 @@ function playerChoice (playerMove){
     result = 'loss'
   }
 
-document.querySelector('.game-2-result').innerHTML=`result =${result},computer: ${computerMove}`;
+  if (result === 'win') {
+    scoring.wins++
+  } else if(result === 'tie'){
+    scoring.ties++
+  } else {
+    scoring.losses++
+  }
+
+document.querySelector('.game-2-result').innerHTML=`result =${result},computer chose <img class="game-2-button-logo-small" src="./games-pic/${computerMove}.png">, You chose <img class="game-2-button-logo-small" src="./games-pic/${playerMove}.png">`;
+document.querySelector('.game-2-score').innerHTML=`Score: wins: ${scoring.wins}, loses: ${scoring.losses}, ties: ${scoring.ties} `
+}
+
+let playerO = 'O';
+let playerX = 'X';
+
+let currentPlayer = playerO;
+
+let gameBoard = ["","","","","","","","",""];
+let gameCells;
+
+let winningConditions = [
+  [0,1,2],
+  [3,4,5],
+  [6,7,8],
+  [0,3,6],
+  [1,4,7],
+  [2,5,8],
+  [0,4,8],
+  [2,4,6]
+]
+
+let gameOver = false;
+
+window.onload = function(){
+ gameCells= document.getElementsByClassName("game-cell");    
+    for( let cell of gameCells) {
+        cell.addEventListener("click", placeCell);
+    };
+
+  restartGameButton= document.getElementById("restart-game-3");
+  restartGameButton.addEventListener("click", restartGame);
+}
+
+function placeCell () {
+
+   if (gameOver == true){
+    return;
+   } 
+    
+   const index = parseInt(this.getAttribute("data-cell-index"))
+
+   if (gameBoard[index] != "") {
+    return;
+   }
+
+    this.innerText = currentPlayer;
+    gameBoard[index] = currentPlayer;
+    
+    currentPlayer = (currentPlayer == playerO) ? playerX : playerO;
+
+    checkWinner();
+}
+
+function checkWinner() {
+  for (winCondition of winningConditions){
+    let a = gameBoard[winCondition[0]];
+    let b = gameBoard[winCondition[1]];
+    let c = gameBoard[winCondition[2]];
+
+    if (a == b && b ==c && a!= ""){
+        for( i=0; i < gameBoard.length; i++) {
+            if(winCondition.includes(i)) {
+                gameCells[i].classList.add("winning-game-cell");
+            }
+        }
+        gameOver= true;
+        return;
+    }
+  }
+}
+
+function restartGame (){
+  gameOver = false;
+  gameBoard = ["","","","","","","","",""];
+  for (let cell of gameCells){
+    cell.innerText="";
+    cell.classList.remove("winning-game-cell");
+  }
 }
